@@ -19,3 +19,8 @@ class FileCategorizer:
             self.write_output(self.odd_file, odd_numbers)
 
             print(f"Done! Created {self.even_file} and {self.odd_file}.")
+
+        except FileNotFoundError:
+            print(f"Error: {self.source_file} not found.")
+        except ValueError:
+            print("Error: File contains non-integer values.")
