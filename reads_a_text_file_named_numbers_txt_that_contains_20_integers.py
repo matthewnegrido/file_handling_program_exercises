@@ -24,3 +24,15 @@ class FileCategorizer:
             print(f"Error: {self.source_file} not found.")
         except ValueError:
             print("Error: File contains non-integer values.")
+
+    def write_output(self, file_name, result_set):
+            with open(file_name, 'w') as file_writer:
+                file_writer.write("\n".join(result_set))
+
+if __name__ == "__main__":
+        if not os.path.exists("numbers.txt"):
+            with open("numbers.txt", "w") as f:
+                f.write("\n".join(map(str, range(1, 21))))
+
+        processor = FileCategorizer()
+        processor.process_data()
