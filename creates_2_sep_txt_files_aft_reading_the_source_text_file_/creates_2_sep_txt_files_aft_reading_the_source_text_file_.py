@@ -28,3 +28,12 @@ def split_integers_by_parity(source_file):
         print(f"Error: {source_file} not found.")
     except ValueError:
         print("Error: File contains non-integer data.")
+
+if __name__ == "__main__":
+    target_source = "integers.txt"
+    if not os.path.exists(target_source):
+        with open(target_source, "w") as creator:
+            sample_data = [str(i) for i in range(1, 21)]
+            creator.write('\n'.join(sample_data))
+
+    split_integers_by_parity(target_source)
