@@ -13,3 +13,9 @@ class LifeRecorder:
 
                 if more_lines != 'y':
                     break
+
+        print(f"\nYour lines have been saved to {self.file_name}")
+
+if __name__ == "__main__":
+    recorder_instance = LifeRecorder()
+    recorder_instance.write_multiple_lines()
