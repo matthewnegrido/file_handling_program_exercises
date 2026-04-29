@@ -15,3 +15,16 @@ def split_integers_by_parity(source_file):
                         even_list.append(str(number))
                     else:
                         odd_list.append(str(number))
+
+        with open('even_numbers.txt', 'w') as even_file:
+            even_file.write('\n'.join(even_list))
+
+        with open('odd_numbers.txt', 'w') as odd_file:
+            odd_file.write('\n'.join(odd_list))
+
+        print("Success: Created 'even_numbers.txt' and 'odd_numbers.txt'.")
+
+    except FileNotFoundError:
+        print(f"Error: {source_file} not found.")
+    except ValueError:
+        print("Error: File contains non-integer data.")
