@@ -22,3 +22,16 @@ class GradeAnalyzer:
                         if current_gwa > highest_gwa:
                             highest_gwa = current_gwa
                             highest_student = student_name
+
+            if highest_student:
+               print("--- Top Performing Student ---")
+               print(f"Name: {highest_student}")
+               print(f"GWA: {highest_gwa}")
+            else:
+               print("No valid student records found.")
+
+        except FileNotFoundError:
+        print(f"Error: {self.source_file} not found.")
+        except ValueError:
+        print("Error: Invalid data format. Ensure GWA is a number.")
+
